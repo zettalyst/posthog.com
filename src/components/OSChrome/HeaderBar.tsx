@@ -369,7 +369,9 @@ export default function HeaderBar({
                                     to="https://app.posthog.com/signup"
                                     className="mr-1"
                                 >
-                                    Get started – free
+                                    {typeof window !== 'undefined' && window.location.pathname.startsWith('/ko')
+                                        ? '지금 시작하세요 - 무료'
+                                        : 'Get started – free'}
                                 </OSButton>
                             )}
                             <Tooltip

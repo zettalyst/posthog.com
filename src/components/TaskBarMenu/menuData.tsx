@@ -314,6 +314,8 @@ const buildProductOSMenuItems = (allProducts: any[]) => {
     return items
 }
 
+const isKoPath = () => typeof window !== 'undefined' && window.location.pathname.startsWith('/ko')
+
 export function useMenuData(): MenuType[] {
     const smallTeamsMenuItems = useSmallTeamsMenuItems()
     const allProducts = useProduct() as any[]
@@ -330,14 +332,15 @@ export function useMenuData(): MenuType[] {
     const posthog = usePostHog()
 
     // Define main navigation items (excluding logo menu)
+    const ko = isKoPath()
     const mainNavItems: MenuType[] = [
         {
-            trigger: 'Product OS',
+            trigger: ko ? '프러덕트 OS' : 'Product OS',
             items: buildProductOSMenuItems(allProducts),
             mobileLink: '/products', // Direct link on mobile
         },
         {
-            trigger: 'Pricing',
+            trigger: ko ? '가격' : 'Pricing',
             items: [
                 {
                     type: 'item',
@@ -427,11 +430,11 @@ export function useMenuData(): MenuType[] {
             ],
         },
         {
-            trigger: 'Docs',
+            trigger: ko ? '문서' : 'Docs',
             items: mergedDocsMenu(allProducts),
         },
         {
-            trigger: 'Community',
+            trigger: ko ? '커뮤니티' : 'Community',
             items: [
                 {
                     type: 'item',
@@ -500,7 +503,7 @@ export function useMenuData(): MenuType[] {
             ],
         },
         {
-            trigger: 'Company',
+            trigger: ko ? '회사' : 'Company',
             items: [
                 {
                     type: 'item',
@@ -624,7 +627,7 @@ export function useMenuData(): MenuType[] {
         {
             trigger: (
                 <>
-                    <span>More</span>
+                    <span>{ko ? '더보기' : 'More'}</span>
                 </>
             ),
             items: [

@@ -294,7 +294,7 @@ export default function TaskBarMenu() {
                         {/* <MenuBar
                         menus={[
                             {
-                                trigger: <span className="text-red font-semibold">Get started - free</span>,
+                                trigger: <span className="text-red font-semibold">{typeof window !== 'undefined' && window.location.pathname.startsWith('/ko') ? '지금 시작하세요 - 무료' : 'Get started - free'}</span>,
                                 items: [
                                     {
                                         type: 'item',
@@ -334,7 +334,11 @@ export default function TaskBarMenu() {
                                 }
                                 className=""
                             >
-                                {posthogInstance ? 'Dashboard' : 'Get started – free'}
+                                {posthogInstance
+                                    ? 'Dashboard'
+                                    : typeof window !== 'undefined' && window.location.pathname.startsWith('/ko')
+                                    ? '지금 시작하세요 - 무료'
+                                    : 'Get started – free'}
                             </OSButton>
                         </div>
                         <Popover
