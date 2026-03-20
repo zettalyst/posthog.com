@@ -193,7 +193,7 @@ module.exports = {
         {
             resolve: `gatsby-plugin-sitemap`,
             options: {
-                excludes: [],
+                excludes: ['/ko', '/ko/**'],
                 createLinkInHead: true,
                 query: `
                 {

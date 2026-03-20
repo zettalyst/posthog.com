@@ -216,7 +216,11 @@ export const createPages: GatsbyNode['createPages'] = async ({ actions: { create
                 filter: {
                     isFuture: { eq: false }
                     frontmatter: { date: { ne: null } }
-                    fields: { slug: { regex: "/^/library|^/founders|^/product-engineers|^/features|^/newsletter/" } }
+                    fields: {
+                        slug: {
+                            regex: "/^/library|^/founders|^/product-engineers|^/features|^/newsletter|^/ko/newsletter/"
+                        }
+                    }
                 }
             ) {
                 totalCount
@@ -1019,7 +1023,7 @@ async function createMinimalPages({
                     frontmatter: { date: { ne: null } }
                     fields: {
                         slug: {
-                            regex: "/^/(blog|library|founders|product-engineers|features|newsletter|spotlight|customers|tutorials)/"
+                            regex: "/^/(blog|library|founders|product-engineers|features|newsletter|spotlight|customers|tutorials|ko/newsletter)/"
                         }
                     }
                 }

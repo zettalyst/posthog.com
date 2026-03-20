@@ -10,6 +10,7 @@ import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
 import { useApp } from '../../context/App'
 import { useWindow } from '../../context/Window'
+import { useT } from '../../i18n'
 
 const ProductDetails = () => (
     <>
@@ -17,10 +18,12 @@ const ProductDetails = () => (
             <span className="w-3 h-3">
                 <Eco />
             </span>
-            <span className="uppercase font-semibold text-xs text-white">Eco-friendly</span>
+            <span className="uppercase font-semibold text-xs text-white">
+                {useT()('cta.ecoFriendly', 'Eco-friendly')}
+            </span>
         </span>
-        <p className="text-4xl font-bold m-0 @xl:mt-2">PostHog Cloud</p>
-        <p className="opacity-50 m-0 mb-4 text-sm">Digital download*</p>
+        <p className="text-4xl font-bold m-0 @xl:mt-2">{useT()('cta.postHogCloud', 'PostHog Cloud')}</p>
+        <p className="opacity-50 m-0 mb-4 text-sm">{useT()('cta.digitalDownload', 'Digital download*')}</p>
     </>
 )
 
@@ -50,6 +53,7 @@ export default function CTA({ headline = true }) {
     const [version, setVersion] = useState('us')
     const [signupCountToday, setSignupCountToday] = useState(0)
     const [ref, inView] = useInView({ threshold: 0.5, triggerOnce: true })
+    const t = useT()
 
     useEffect(() => {
         if (posthog?.isFeatureEnabled('direct-to-eu-cloud')) {
@@ -104,27 +108,29 @@ export default function CTA({ headline = true }) {
                                 className="bg-blue text-left leading-none px-4 py-2 absolute -top-12 left-4 right-4 @xl:-left-4 @xl:right-auto rounded @xl:rounded-none"
                             >
                                 <span className="text-sm font-bold text-white">
-                                    3 people <span className="text-xs text-normal">(would have)</span> added PostHog to
-                                    their cart*
+                                    {t('cta.addedToCart', '3 people (would have) added PostHog to their cart*')}
                                 </span>
                                 <br />
-                                <span className="text-xs text-white">*if this were a real cart</span>
+                                <span className="text-xs text-white">
+                                    {t('cta.ifRealCart', '*if this were a real cart')}
+                                </span>
                             </motion.div>
                         )}
                         <div className="absolute top-4 -right-12">
                             <div className="relative">
                                 <Bang className="w-[189px] animate-grow" />
                                 <p className="px-8 text-center m-0 absolute top-0 left-0 right-0 bottom-0 flex flex-col items-center justify-center text-black uppercase leading-none font-bold text-lg rotate-6">
-                                    <span className="text-xs">Not</span>
-                                    endorsed <br />
-                                    by Kim K
+                                    {t('cta.notEndorsed', 'Not endorsed by Kim K')}
                                 </p>
                             </div>
                         </div>
                         <p className="text-xs opacity-60 text-right">
-                            *PostHog is a web product and cannot be installed by CD.
+                            {t('cta.webProduct', '*PostHog is a web product and cannot be installed by CD.')}
                             <br />
-                            We <em>did</em> once send some customers a floppy disk but it was a Rickroll.
+                            {t(
+                                'cta.floppyDisk',
+                                'We did once send some customers a floppy disk but it was a Rickroll.'
+                            )}
                         </p>
                     </div>
                     <div>
@@ -134,7 +140,9 @@ export default function CTA({ headline = true }) {
 
                         <ul className="p-0 m-0 space-y-5">
                             <li className="list-none">
-                                <strong className="text-lg block pb-1">Select your cloud</strong>
+                                <strong className="text-lg block pb-1">
+                                    {t('cta.selectCloud', 'Select your cloud')}
+                                </strong>
                                 <ul className="flex gap-2 p-0 list-none">
                                     <li>
                                         <button
@@ -145,7 +153,7 @@ export default function CTA({ headline = true }) {
                                                     : 'border-transparent dark:border-transparent'
                                             }  hover:border-black dark:hover:border-white`}
                                         >
-                                            US (Virginia)
+                                            {t('cta.usVirginia', 'US (Virginia)')}
                                         </button>
                                     </li>
                                     <li>
@@ -157,18 +165,23 @@ export default function CTA({ headline = true }) {
                                                     : 'border-transparent dark:border-transparent'
                                             }  hover:border-black dark:hover:border-white`}
                                         >
-                                            EU (Frankfurt)
+                                            {t('cta.euFrankfurt', 'EU (Frankfurt)')}
                                         </button>
                                     </li>
                                 </ul>
                             </li>
                             <li className="list-none">
-                                <strong className="text-lg block">Starts at:</strong>
+                                <strong className="text-lg block">{t('cta.startsAt', 'Starts at:')}</strong>
                                 <div className="flex items-baseline gap-1">
                                     <s className="font-bold text-xl">$0</s>
-                                    <span className="font-bold text-red text-xl uppercase">Free</span>
+                                    <span className="font-bold text-red text-xl uppercase">
+                                        {t('cta.free', 'Free')}
+                                    </span>
                                     <span className="text-xs opacity-50">
-                                        &gt;<span className="text-sm">1 left at this price!!</span>
+                                        &gt;
+                                        <span className="text-sm">
+                                            {t('cta.leftAtThisPrice', '1 left at this price!!')}
+                                        </span>
                                     </span>
                                 </div>
                             </li>
@@ -183,7 +196,7 @@ export default function CTA({ headline = true }) {
                                 className="animate-grow-sm"
                                 state={{ initialTab: 'signup' }}
                             >
-                                Get started
+                                {t('cta.getStartedBtn', 'Get started')}
                             </CallToAction>
                         </div>
 
@@ -192,7 +205,8 @@ export default function CTA({ headline = true }) {
                                 <TrendUp className="opacity-75" />
                             </span>
                             <p className="text-sm text-secondary leading-tight mb-0">
-                                <strong>Hurry:</strong> {signupCountToday || 'Tons of '} companies signed up{' '}
+                                <strong>{t('cta.hurry', 'Hurry:')}</strong> {signupCountToday || 'Tons of '}{' '}
+                                {t('cta.companiesSignedUp', 'companies signed up')}{' '}
                                 <button
                                     onClick={() =>
                                         addWindow(
@@ -208,7 +222,7 @@ export default function CTA({ headline = true }) {
                                     today
                                 </button>
                                 . <br className="hidden sm:block" />
-                                Act now and get $0 off your first order.
+                                {t('cta.actNow', 'Act now and get $0 off your first order.')}
                             </p>
                         </div>
                     </div>

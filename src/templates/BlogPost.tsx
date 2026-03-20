@@ -388,6 +388,12 @@ export default function BlogPost({ data, pageContext, location, mobile = false }
                 article
                 image={`${process.env.GATSBY_CLOUDFRONT_OG_URL}/${fields.slug.replace(/\//g, '')}.jpeg`}
                 imageType="absolute"
+                noindex={fields.slug?.startsWith('/ko/')}
+                canonicalUrl={
+                    fields.slug?.startsWith('/ko/')
+                        ? `https://posthog.com${fields.slug.replace('/ko/', '/')}`
+                        : undefined
+                }
             />
 
             <ReaderView

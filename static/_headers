@@ -1,5 +1,6 @@
 /*
   X-Frame-Options: SAMEORIGIN
+  X-Robots-Tag: noindex, nofollow, noarchive, nosnippet
 
 /brand/*
   Cache-Control: public

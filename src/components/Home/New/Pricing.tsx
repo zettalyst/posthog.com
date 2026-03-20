@@ -5,6 +5,7 @@ import OSTable from 'components/OSTable'
 import { IconArrowUpRight } from '@posthog/icons'
 import { Link } from 'gatsby'
 import OSButton from 'components/OSButton'
+import { useT } from '../../../i18n'
 
 const productsToShow = ['product_analytics', 'feature_flags', 'session_replay', 'data_warehouse']
 
@@ -20,11 +21,12 @@ function numberToWords(num: number): string {
 export default function Pricing() {
     const { products: initialProducts } = useProducts()
     const products = initialProducts.filter((product) => productsToShow.includes(product.handle))
+    const t = useT()
 
     const columns = [
         { name: '', width: '50px', align: 'center' as const },
-        { name: 'Product', width: 'minmax(200px,1fr)', align: 'left' as const },
-        { name: 'Free tier', width: 'minmax(200px,1fr)', align: 'left' as const },
+        { name: t('pricing.product', 'Product'), width: 'minmax(200px,1fr)', align: 'left' as const },
+        { name: t('pricing.freeTier', 'Free tier'), width: 'minmax(200px,1fr)', align: 'left' as const },
         { name: 'Pricing (decreases with volume)', width: 'minmax(200px,2fr)', align: 'left' as const },
     ]
 
@@ -35,7 +37,7 @@ export default function Pricing() {
                 content: (
                     <Link to={`/${product.slug}`} state={{ newWindow: true }} className="flex items-center space-x-1">
                         <product.Icon className={`inline-block size-4 text-${product.color}`} />
-                        <span>{product.name}</span>
+                        <span>{t(`product.${product.name}`, product.name)}</span>
                     </Link>
                 ),
             },
@@ -65,7 +67,7 @@ export default function Pricing() {
                             >
                                 <span>{index + 1}.</span>
                                 <product.Icon className={`inline-block size-4 text-${product.color}`} />
-                                <span>{product.name}</span>
+                                <span>{t(`product.${product.name}`, product.name)}</span>
                             </Link>
                         </div>
                         <div className="px-3 py-2 text-sm space-y-1">

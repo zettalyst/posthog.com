@@ -1,0 +1,230 @@
+위치,영어,한글,문장
+왼쪽,home,홈,
+,Product OS,프러덕트 OS,
+,Pricing,가격,
+,Custemrs,고객 목록,
+,Demo,데모,
+,Docs,문서,
+,Talk to a human,컨택트,
+,Ask a question,문의,
+,Sign up,회원 가입,
+,Switch to website mode,웹사이트 모드 변경,
+오른쪽,Why PostHog?,PostHog만의 장점,
+,Cangelog,변경로그,
+,Company handbook,기업 안내서,
+,Work here,작업 정보,
+,Store,스토어,
+,Trash,휴지통,
+,We make dev tools that help product engineers build successful products.,저희는 프러덕트 엔지니어가 완벽한 제품을 만들수 있도록 돕는 개발도구를 제작합니다.,
+,Get started-free ,지금 시작하세요-무료,
+,Install with AI ,AI를 이용해 설치해 보세요,
+,Questions? Watch a demo or talk to a human,궁금한 점이 있으신가요? 데모영상을 시청하거나 담당자와 상담하세요,
+가운데-메인,Explore apps by company stage,회사 규모 별 앱 살펴보기,
+,Startup/Sideproject  ,스타트업/n 잡용,
+,Web Analyticks-Privacy-focused web analytics ,웹 분석-개인정보 보호에 초점을 맞춘 웹 분석,
+,Session Replay-Watch People use your product ,"세션 다시보기 -사람들이 당신의 제품을 사용하는 모습을 확인할 수 있습니다 
+",
+,Product Analytics-Product analytics with autocapture,프러덕트 분석-자동 캡쳐 기능을 활용한 제품 분석,
+,Feature Flags -Safely roll out features to specific users or groups,피쳐 플래그-특정 사용자 또는 그룹에게 안전하게 기능을 배포합니다. ,
+,Error Tracking-Track errors and resolve issues,오류 추적-오류를 추적하고 문제를 해결합니다. ,
+,Surveys-Ask anything with no-code survesy,설문조사 -코딩없이 설문조사를 통해 무엇이든 물어보세요,
+,LLM Analytics-Observe and debug AI in production,LLM분석 - 실제 운영 환경에서 AI를 관찰하고 디버깅하세요,
+,Growth,성장 단계 기업,
+,PostHog AI-Ask questions about how people use your product,PostHog AI-실제 사람들이 프러덕트를 어떻게 사용하는지에 대해 질문해보세요.,
+,Session Replay-Watch People use your product ,"세션 다시보기 -사람들이 당신의 제품을 사용하는 모습을 확인할 수 있습니다 
+",
+,Web Analyticks-Privacy-focused web analytics ,웹 분석개인정보 보호에 초점을 맞춘 웹 분석,
+,Product Analytics-Product analytics with autocapture,프러덕트 분석-자동 캡쳐 기능을 활용한 제품 분석,
+,Error Tracking-Track errors and resolve issues,오류 추적-오류를 추적하고 문제를 해결합니다. ,
+,Experiments-Test cchanges with statistical significance. ,실험-통계상 중요한 변화를 테스트하세요. ,
+,Feature Flags-Safely roll out features to specific users or groups,피쳐 플래그-특정 사용자 또는 그룹에게 안전하게 기능을 배포합니다. ,
+,Logs-Logs that sync with customer data,로그 -고객 데이터와 동기화 로그,
+,"CDP-Ingest, transform, and send data between 145+ tools","CDP-145개 이상의 툴 사이에 데이터를 수집, 변환 및 전송합니다. ",
+,Workflows-Automate workflows with product data,워크플로우-프러덕트 데이터를 활용하여 워크플로우를 자동화하세요. ,
+,Scale,,
+,Managed Warehouse-Query & visualize product and third party data together  , 관리형 창고-프러덕트 데이터와 제 3자 데이터를 함께 조회하고 시각화 합니다.,
+,"CDP-Ingest, transform, and send data between 145+ tools","CDP-145개 이상의 툴 사이에 데이터를 수집, 변환 및 전송합니다. ",
+,Custom dashboards-Track all your metircs in one place,맞춤형 대시보드-모든 지표를 한 곳에서 파악하세요. ,
+,Product Analytics-Product analytics with autocapture,프러덕트 분석-자동 캡쳐 기능을 활용한 제품 분석,
+,Experiments-Test cchanges with statistical significance. ,실험 -통계상 중요한 변화를 테스트하세요. ,
+,Feature Flags-Safely roll out features to specific users or groups,피쳐 플래그 -특정 사용자 또는 그룹에게 안전하게 기능을 배포합니다. ,
+,Error Tracking,오류 추적-오류를 추적하고 문제를 해결합니다. ,
+,You may also like...,"다음 상품도 마음에 드실 수 있습니다 ",
+,DPA generator,DPA 생성기,
+,BAA Genearator,BAA 발전기,
+,Platform Packages,플랫폼 패키지 ,
+,Go to app library(34),앱 라이브러리,
+,Who's using PostHog?,어떤 회사들이 실제로 PostHog를 사용하나요? ,
+,Here are some of our paying customers. ,저희 유료 고객들입니다. ,
+,(Yes they actually use us,"네, 실제로 저희 서비스를 이용하고 계신 분들입니다. 2년 전에 그냥 한번 써본 엔지니어가 아니라요.)",
+,no it's not just some random engineer who tried us out 2+ years ago.),,
+,Shuffle companies ,회사를 재배치하세요,
+,VCs love them ,벤쳐 캐피탈,
+,Product Engineers love them ,프러덕트 엔지니어들,
+,Open customers ,고객 파일을 엽니다,
+,"PostHog data stack, built for data teams and loved by product teams",데이터스택은 데이터 팀을 위해 설계되었으며 프러덕트 팀에서도 사랑받고 있습니다,
+,"When you're analyzing how customers use your product, ",당신의 고객이 제품을 어떻게 사용하는지 분석할때,
+,you should be operating from the full set of data.,모든 데이터를 활용할 수 있습니다,
+,This includes customer information that happens outside your product:,프러덕트 외부에서 발생하는 고객 정보가 포함됩니다,
+,payments from Stripe,Stripe를 이용한 결제,
+,exceptions in an error tracking tool,오류 추적 툴에 기록된 예외,
+,tickets in your support platform,고객 지원플랫폼의 요청들,
+,Having all the data in one place means you can make,모든 데이터를 한 곳에 모아둘 수 있어,
+, more informed decisions about what to build next,다음에 무엇을 개발할지 결정할때 참고할 수 있습니다,
+,"PostHog's Product OS isn't just analytics – 
+","PostHog의 Product OS는 단순한 하나의 분석 도구가 아니라, ",
+,it's the entire suite of tools built to give you ,"고객에 대한 모든 정보를 한번에 파악할 수 있도록 설계된 종합 툴 모음입니다. ",
+,a single source of truth about your customers.,,
+,"Built-in, Product OS ships with ",내장형 제품 OS에는 다음이 포함됩니다,
+,• A data warehouse ,데이터 창고,
+,120+ sources/destinations ,120개 이상의 출발지/도착지,
+,SQL editor + BI + data viz ,SQL 편집기 + BI + 데이터 시각화,
+,• User activity feed (CDP-lite) ,사용자활동 피드(CDP-lite),
+,"API, webhooks ","API, 웹혹",
+,README : PostHog data stack,PostHog의 데이터 스택 읽어보기,
+,Usage-based pricing,사용자 기반 가격 책정,
+,Our whole philosophy is that you shouldn't have to worry about pricing.,저희의 핵심 철학은 고객 여러분께서 가격에 대해 걱정하실 필요가 없게 만드는 것입니다.,
+,All our paid products are pay-per-use with generous monthly free tiers.,"저희 제품 모두 사용량에 따라 가격이 책정되며, 넉넉한 월별 무료 사용기간을 제공합니다. ",
+," In fact, 98% of our customers use PostHog for free.",실제로 98% 고객들이 PostHog를 무료로 사용하고 있습니다,
+,We aim to be the cheapest option at scale – ,저희는 대규모 사용에도 가장 저렴한 옵션을 제공하는 것을 목표로 합니다. ,
+,PostHog should be a no-brainer. ,PostHog는 고민할 필요 없이 바로 선택할 수 있는 솔루션입니다.,
+,"You never have to ""jump on a quick call"" with sales.","영업담당자와 전화상담을 해야할 필요도 없습니다. ",
+,Here are some examples of how we charge for most popular products:,우리의 인기 프러덕트에 대한 요금 책정 방식을 소개합니다. ,
+프러덕트 표,Product,제품,
+,Session Replay ,세션 다시보기,
+,Feature Flags ,피쳐 플래그,
+,4Managed warehouse ,관리형 창고,
+무료 서비스 표,Free tier,무료 서비스,
+,million events/mo ,1 million events/mo ,
+,"5,000 recordings/mo ","5,000 recordings/mo ",
+,1 million requests/mo ,1 million requests/mo ,
+,1 million rows/mo ,1 million rows/mo ,
+가격 표,$0.00005/event ,이벤트 당 0.00005 달러,
+,$0.005/recording ,녹음당 0.005 달러 ,
+,$0.0001/request ,요청당 0.0001달러,
+,$0.000015/row 1줄 ,1줄 당 0.000015 달러 ,
+,Explore pricing ,가격 정보 보기,
+,"""How can AI help analyze data and build products faster?""",인공 지능은 어떻게 데이터를 분석하고 제품 개발 속도를 높일 수 있을까?,
+,We have several teams working on AI on a handful of fronts.,저희는 여러분야에서 AI를 개발하는 팀을 보유하고 있습니다. ,
+, PostHog AI works across PostHog –,"PostHog AI는 PostHog 전반에 걸쳐 작동하며,",
+, and it's way more than just generating insights., 단순히 인사이트를 생성하는 것 이상의 기능 을 제공합니다,
+,PostHog AI helps you automate monotonous tasks of gathering context,"PostHog AI는 컨텍스트을 수집하고 정보를 요약하는 단조로운 작업을 자동화하는 데 도움을 주며,",
+, and summarizing information – and will soon have the ability , 조만간 버그를 수정하고 소프트웨어를 개선하기 위해 코드를 변경하는 기능도 갖추게 될 것입니다.,
+,to make code changes to fix bugs and improve software.,,
+,Learn about PostHogAI ,"AI에 대해서 알아보기 ",
+,Why PostHog?,PostHog만의 장점,
+,We're different from most companies for a bunch of reasons:,저희 회사는 여러 가지 이유로 대부분의 회사와 다릅니다.,
+,• Transparency.,투명성. ,
+," You can read our company handbook, our sales manual, and company strategy","당사의 기업 안내서 , 영업 매뉴얼 및 회사 전략을 읽어보실 수 있습니다 .",
+,• We ship fast. See our changelog.,빠른 배포를 약속드립니다. 변경 내역을 확인하세요 .,
+,Actually-technical support. Our support folks all have engineering backgrounds,확실한 기술 기반 회사입니다. 저희 지원팀 모두 공학 전공자입니다. ,
+,Read more about us,직원들에 대한 정보는 여기서 읽어 볼 수 있습니다.,
+,Bedtime reading,심심할때 읽어보기,
+,Still here? We've got some links that may be mildly interesting to you,저희에 대해 궁금한게 더 있으신가요? 흥미로울 만한 링크 몇 개를 준비했습니다.,
+,• demo.mov ,데모. mov,
+,Technical docs ,기술문서,
+,• API ,API,
+,Ask a question ,문의,
+,Small teams at PostHog ,PostHog의 팀 소개,
+,Shameless CTA ,뻔뻔스러운 CTA,
+,"If nothing else has sold you on PostHog,",PostHog에 살만한게 없다고 생각되신다면,
+,hopefully these classic marketing tactics will.3 people (would have) added PostHoㅎ,"이러한 고전적인 마케팅 전략만큼은 설득력이 있을 것입니다.",
+, to their cart**if this were a real cart,,
+,NOTENDORSED ,킴 카다시안은 절대 이용하지 않을 최고의 지적 서비스 ,
+,BY KIM K ,,
+,Digital download* ,디지털 다운로드,
+,*PostHog is a web product and cannot be installed by CD.,PostHog는 웹 기반 제품이므로 CD로 설치할 수 없습니다,
+,We did once send some customers a floppy disk but it was a Rickroll.ECO-FRIENDLY,"예전에 일부 고객에게 플로피 디스크를 보낸 적이 있는데, 그 안에는 릭롤(Rickroll)이 들어 있었습니다",
+,PostHog Cloud,,
+,Select your cloud ,클라우드를 선택하세요,
+,US (Virginia) ,미국 (버지니아주),
+,EU (Frankfurt) ,EU(프랑크푸르트),
+,Starts at:$0FREE,가격->무료,
+,1 left at this price,단 1개만 남았습니다!,
+,Get started ,시작하세요,
+,Hurry: 1459 companies signed up today.,서두르세요: 오늘 만 1459개 기업이 가입했습니다 ,
+,Act now and get $0 off your first order.,지금 바로 주문하시면 첫 주문 시 0원에 구매하실 수 있습니다,
+,Thanks for being visitor number,Thanks for being visitor number,
+,,,
+===미적용 항목 (소스코드에서 발견)===,,,
+,,,
+CTA 컴포넌트 (src/components/Home/CTA.js),,,
+,This is the call to action.,,
+,"3 people (would have) added PostHog to their cart*",,
+,*if this were a real cart,,
+,PostHog Cloud,,기존 row 138에 번역 없음
+,Eco-friendly,,
+,,,
+가격표 컴포넌트 (src/components/Home/New/Pricing.tsx),,,
+,Pricing (decreases with volume),,가격표 컬럼 헤더
+,Free tier:,,카드 레이아웃 라벨
+,Pricing:,,카드 레이아웃 라벨
+,,,
+제품 카테고리명 (src/components/Home/Control/index.tsx - productCategories),,,
+,Analytics,,
+,Data stack,,
+,Feature development,,
+,Debugging & analysis,,
+,AI tools,,
+,Feedback & testing,,
+,Tools,,
+,,,
+추가 제품명 (src/hooks/useProduct.ts - 하드코딩된 제품),,,
+,User interviews,,"제품명: Get feedback from users."
+,Support,,"제품명: Built-in customer support with chat widget and unified inbox."
+,"Coding agent (PostHog Code)",,"제품명: AI coding agent that understands your product analytics."
+,Product tours,,"제품명: Guide users through your product with interactive tours and announcements."
+,Traces,,"제품명: Debug entire AI conversations with full trace visibility."
+,Generations,,"제품명: Inspect every LLM call with full input/output visibility."
+,Evals,,"제품명: Run LLM-as-a-judge evaluations to catch regressions."
+,No-code A/B testing,,"제품명: Run A/B tests without writing code."
+,Group Analytics,,"제품명: Analyze multi-seat accounts and other groups."
+,Platform packages,,"제품명: Features for teams"
+,User profiles,,"제품명: Analyze multi-seat accounts and other groups."
+,Custom dashboards,,"제품명: Track all your most important product and performance metrics in one place."
+,,,
+기타 컴포넌트 내부 문자열,,,
+,table of contents,,목차 토글 버튼 (Control/index.tsx)
+,Contents,,목차 아코디언 제목
+,You can also connect your own!,,데이터 웨어하우스 툴팁
+,First PostHog customer!,,고객 로고 툴팁
+,Read customer story,,고객 로고 툴팁
+,Total hit count to posthog.com,,방문자 카운터 툴팁
+,Explore,,ProductTabs 버튼 텍스트
+,,,
+===제품 데이터 (src/hooks/productData/) - API+하드코딩===,,,
+,,,
+제품명 (name),overview title,,소스파일
+,Web Analytics,,"overview: Privacy-focused web analytics (web_analytics.tsx)"
+,Session Replay,,"overview: Watch people use your product (session_replay.tsx)"
+,Product Analytics,,"overview: Product analytics with autocapture (product_analytics.tsx)"
+,Feature Flags,,"overview: Safely roll out features to specific users or groups (feature_flags.tsx)"
+,Error Tracking,,"overview: Track errors and resolve issues (error_tracking.tsx)"
+,Surveys,,"overview: Ask anything with no-code surveys (surveys.tsx)"
+,LLM Analytics,,"overview: Observe and debug AI in production (llm_analytics.tsx)"
+,PostHog AI,,"overview: Ask questions about how people use your product (posthog_ai.tsx)"
+,Experiments,,"overview: Test changes with statistical significance (experiments.tsx)"
+,Logs,,"overview: Search and analyze your logs in PostHog (logs.tsx)"
+,CDP,,"overview: Ingest transform and send data between 145+ tools (cdp.tsx)"
+,Workflows,,"overview: Automate workflows with your product data (workflows.tsx)"
+,Managed warehouse,,"overview: Query & visualize product and third party data together (data_warehouse.tsx)"
+,Revenue Analytics,,"overview: Track revenue alongside product metrics (revenue_analytics.tsx)"
+,Realtime destinations,,(realtime_destinations.tsx)
+,Endpoints,,"overview: Custom API endpoints powered by your PostHog data (endpoints.tsx)"
+,,,
+제품 overview title (ProductTabs에 표시),,,"번역 시 제품명과 함께 사용됨"
+,Privacy-focused web analytics,,web_analytics.tsx
+,Watch people use your product,,session_replay.tsx
+,Product analytics with autocapture,,product_analytics.tsx - API에서 제공
+,Safely roll out features to specific users or groups,,feature_flags.tsx
+,Track errors and resolve issues,,error_tracking.tsx
+,Ask anything with no-code surveys,,surveys.tsx
+,Observe and debug AI in production,,llm_analytics.tsx
+,Ask questions about how people use your product,,posthog_ai.tsx
+,Test changes with statistical significance,,experiments.tsx
+,Search and analyze your logs in PostHog,,logs.tsx
+,"Ingest, transform, and send data between 145+ tools",,cdp.tsx
+,Automate workflows with your product data,,workflows.tsx
+,Query & visualize product and third party data together,,data_warehouse.tsx
+,Track revenue alongside product metrics,,revenue_analytics.tsx
+,"Custom API endpoints powered by your PostHog data.",,endpoints.tsx

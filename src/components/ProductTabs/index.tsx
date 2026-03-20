@@ -9,6 +9,7 @@ import { useApp } from '../../context/App'
 import { graphql, useStaticQuery } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { useWindow } from '../../context/Window'
+import { useT } from '../../i18n'
 
 const Image = ({
     images,
@@ -135,13 +136,16 @@ export default function ProductTabs({ productHandles, className, selectedStage }
         return null
     }
 
+    const t = useT()
+
     const tabs = products.map((product) => {
+        const translatedName = t(`product.${product.name}`, product.name)
         return {
             value: product.handle,
             label: (
                 <>
                     {product.Icon && <product.Icon className={`inline-block size-6 text-${product.color}`} />}
-                    {product.name}
+                    {translatedName}
                 </>
             ),
             content: (
@@ -156,9 +160,11 @@ export default function ProductTabs({ productHandles, className, selectedStage }
                                 />
                             )}
                             <div className={`${product.overview.textColor} dark:text-white`}>
-                                <h3 className="text-xl font-bold tracking-tight">{product.name}</h3>
+                                <h3 className="text-xl font-bold tracking-tight">{translatedName}</h3>
                                 {product.overview?.title && (
-                                    <p className="mb-0 leading-tight">{product.overview.title}</p>
+                                    <p className="mb-0 leading-tight">
+                                        {t(`overview.${product.overview.title}`, product.overview.title)}
+                                    </p>
                                 )}
                             </div>
                         </div>
@@ -170,7 +176,7 @@ export default function ProductTabs({ productHandles, className, selectedStage }
                                 variant="secondary"
                                 size="md"
                             >
-                                Explore
+                                {t('products.explore', 'Explore')}
                             </OSButton>
                         </div>
                     </div>

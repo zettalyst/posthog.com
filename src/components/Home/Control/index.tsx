@@ -44,6 +44,7 @@ import { motion } from 'framer-motion'
 import SmallTeam from 'components/SmallTeam'
 import { RenderInClient } from 'components/RenderInClient'
 import WizardCommand from 'components/WizardCommand'
+import { LocaleProvider, useT } from '../../../i18n'
 interface ProductButtonsProps {
     productTypes: string[]
     className?: string
@@ -93,6 +94,7 @@ const HomeHappyHog = () => {
 
 const CTAs = () => {
     const [showIntegrationPrompt, setShowIntegrationPrompt] = useState(false)
+    const t = useT()
     return (
         <div>
             <div className="flex flex-col @xs:flex-row @xs:justify-center @xl:justify-start gap-3 @sm:gap-2">
@@ -101,10 +103,10 @@ const CTAs = () => {
                     size="md"
                     state={{ newWindow: true, initialTab: 'signup' }}
                 >
-                    Get started - free
+                    {t('cta.getStarted', 'Get started - free')}
                 </CallToAction>
                 <CallToAction type="secondary" size="md" onClick={() => setShowIntegrationPrompt(true)}>
-                    Install with AI
+                    {t('cta.installWithAI', 'Install with AI')}
                 </CallToAction>
             </div>
             <motion.div
@@ -124,6 +126,7 @@ const CTAs = () => {
 }
 
 const HomeHitCounter = () => {
+    const t = useT()
     const [hitCount, setHitCount] = useState<number | null>(null)
 
     useEffect(() => {
@@ -155,7 +158,7 @@ const HomeHitCounter = () => {
 
     return (
         <div className="flex flex-col justify-center text-center mt-20">
-            <p className="mb-2">Thanks for being visitor number</p>
+            <p className="mb-2">{t('hitCounter.visitor', 'Thanks for being visitor number')}</p>
             <Tooltip
                 trigger={
                     <div className="inline-flex bg-black divide-x divide-primary">
@@ -189,7 +192,7 @@ const HomeHitCounter = () => {
                 }
                 delay={0}
             >
-                Total hit count to posthog.com
+                {t('hitCounter.totalHits', 'Total hit count to posthog.com')}
             </Tooltip>
         </div>
     )
@@ -719,6 +722,7 @@ const ProductCategoryColumn = ({
     allProducts: any[]
 }) => {
     const [expanded, setExpanded] = useState(false)
+    const t = useT()
 
     const products = category.handles.map((handle) => allProducts.find((p: any) => p.handle === handle)).filter(Boolean)
 
@@ -740,7 +744,7 @@ const ProductCategoryColumn = ({
                     <span className="size-4 shrink-0 flex items-center justify-center text-secondary text-xs font-bold">
                         &bull;&bull;&bull;
                     </span>
-                    {remainingCount} more
+                    {remainingCount} {t('products.more', 'more')}
                 </button>
             )}
         </div>
@@ -761,41 +765,49 @@ const ProductCategoryGrid = () => {
     )
 }
 
-const ProductsSectionControl = () => (
-    <>
-        <header className="flex flex-col items-center @xl:flex-row @xl:justify-between @xl:items-baseline [&_h2]:m-0 mt-10 mb-4">
-            <h2 className="m-0 tracking-tight">
-                Explore apps{' '}
-                <span className="text-secondary text-sm font-normal tracking-normal">by company stage</span>
-            </h2>
-            <aside className="hidden @xl:inline-flex">
-                <span>
-                    <Link to="/products" state={{ newWindow: true }}>
-                        Browse app library
-                    </Link>{' '}
-                    ({APP_COUNT})
-                </span>
-            </aside>
-        </header>
-        <CompanyStageTabs />
-    </>
-)
+const ProductsSectionControl = () => {
+    const t = useT()
+    return (
+        <>
+            <header className="flex flex-col items-center @xl:flex-row @xl:justify-between @xl:items-baseline [&_h2]:m-0 mt-10 mb-4">
+                <h2 className="m-0 tracking-tight">
+                    {t('products.exploreApps', 'Explore apps')}{' '}
+                    <span className="text-secondary text-sm font-normal tracking-normal">
+                        {t('products.byCompanyStage', 'by company stage')}
+                    </span>
+                </h2>
+                <aside className="hidden @xl:inline-flex">
+                    <span>
+                        <Link to="/products" state={{ newWindow: true }}>
+                            {t('products.browseLibrary', 'Browse app library')}
+                        </Link>{' '}
+                        ({APP_COUNT})
+                    </span>
+                </aside>
+            </header>
+            <CompanyStageTabs />
+        </>
+    )
+}
 
-const ProductsSectionTest = () => (
-    <>
-        <header className="product-section-test flex flex-col items-center @xl:flex-row @xl:justify-between @xl:items-baseline [&_h2]:m-0 mt-10 mb-4">
-            <h2 className="m-0 tracking-tight">Products</h2>
-            <Link
-                to="/products"
-                state={{ newWindow: true }}
-                className="text-sm font-semibold flex items-center gap-0.5"
-            >
-                Explore all products <IconArrowRight className="size-4" />
-            </Link>
-        </header>
-        <ProductCategoryGrid />
-    </>
-)
+const ProductsSectionTest = () => {
+    const t = useT()
+    return (
+        <>
+            <header className="product-section-test flex flex-col items-center @xl:flex-row @xl:justify-between @xl:items-baseline [&_h2]:m-0 mt-10 mb-4">
+                <h2 className="m-0 tracking-tight">{t('products.products', 'Products')}</h2>
+                <Link
+                    to="/products"
+                    state={{ newWindow: true }}
+                    className="text-sm font-semibold flex items-center gap-0.5"
+                >
+                    {t('products.exploreAll', 'Explore all products')} <IconArrowRight className="size-4" />
+                </Link>
+            </header>
+            <ProductCategoryGrid />
+        </>
+    )
+}
 
 const ProductsSection = () => {
     const posthog = usePostHog()
@@ -815,26 +827,25 @@ const ProductsSection = () => {
 
 const CompanyStageTabs = () => {
     const [selectedStage, setSelectedStage] = React.useState('growth')
+    const t = useT()
 
     const companyStageOptions: ToggleOption[] = [
         {
             label: (
                 <span>
-                    Startup<span className="hidden @lg:inline"> / Side project</span>
+                    {t('products.startup', 'Startup')}
+                    <span className="hidden @lg:inline"> / {t('products.sideProject', 'Side project')}</span>
                 </span>
             ),
             value: 'startup',
-            // icon: <IconLaptop className="size-5" />,
         },
         {
-            label: 'Growth',
+            label: t('products.growth', 'Growth'),
             value: 'growth',
-            // icon: <IconLaptop className="size-5" />,
         },
         {
-            label: 'Scale',
+            label: t('products.scale', 'Scale'),
             value: 'scale',
-            // icon: <IconLaptop className="size-5" />,
         },
     ]
 
@@ -964,6 +975,7 @@ const Customers = () => {
     const [isAnimating, setIsAnimating] = React.useState(false)
     const logoRefs = React.useRef<Record<string, HTMLElement>>({})
     const { websiteMode } = useApp()
+    const t = useT()
 
     // Get all companies
     const allCompanies = [...COL1, ...COL2]
@@ -1098,7 +1110,9 @@ const Customers = () => {
                         sideOffset={14}
                     >
                         <p className="text-sm mb-0">
-                            {customer.slug === 'posthog' ? 'First PostHog customer!' : 'Read customer story'}
+                            {customer.slug === 'posthog'
+                                ? t('tooltip.firstCustomer', 'First PostHog customer!')
+                                : t('tooltip.readCustomerStory', 'Read customer story')}
                         </p>
                     </Tooltip>
                 </OSButton>
@@ -1144,10 +1158,11 @@ const Customers = () => {
                             disabled={isAnimating}
                         >
                             {isAnimating ? (
-                                '🔀 Shuffling...'
+                                t('customers.shuffling', '🔀 Shuffling...')
                             ) : (
                                 <>
-                                    <IconRefresh className="size-4 inline-block relative -top-px" /> Shuffle companies
+                                    <IconRefresh className="size-4 inline-block relative -top-px" />{' '}
+                                    {t('customers.shuffle', 'Shuffle companies')}
                                 </>
                             )}
                         </OSButton>
@@ -1222,7 +1237,7 @@ const Customers = () => {
                     className="mt-4"
                     state={{ newWindow: true }}
                 >
-                    Open customers.mdx
+                    {t('customers.openCustomers', 'Open customers.mdx')}
                 </OSButton>
             </div>
         </>
@@ -1230,9 +1245,10 @@ const Customers = () => {
 }
 
 function TaglineControl(): JSX.Element {
+    const t = useT()
     return (
         <p className="text-base font-medium">
-            We make dev tools that help product engineers build successful products.
+            {t('tagline', 'We make dev tools that help product engineers build successful products.')}
         </p>
     )
 }
@@ -1314,14 +1330,20 @@ const jsxComponentDescriptors: JsxComponentDescriptor[] = [
         name: 'CTA',
         kind: 'flow',
         props: [],
-        Editor: () => (
-            <>
-                <p className="-mt-2">
-                    If nothing else has sold you on PostHog, hopefully these classic marketing tactics will.
-                </p>
-                <CTA headline={false} />
-            </>
-        ),
+        Editor: () => {
+            const t = useT()
+            return (
+                <>
+                    <p className="-mt-2">
+                        {t(
+                            'cta.shameless',
+                            'If nothing else has sold you on PostHog, hopefully these classic marketing tactics will.'
+                        )}
+                    </p>
+                    <CTA headline={false} />
+                </>
+            )
+        },
     },
     {
         name: 'Logo',
@@ -1336,25 +1358,37 @@ const jsxComponentDescriptors: JsxComponentDescriptor[] = [
         name: 'ButtonDataStack',
         kind: 'flow',
         props: [],
-        Editor: () => <Button url="/data-stack">README: PostHog data stack.md</Button>,
+        Editor: () => {
+            const t = useT()
+            return <Button url="/data-stack">{t('buttons.dataStack', 'README: PostHog data stack.md')}</Button>
+        },
     },
     {
         name: 'ButtonPricing',
         kind: 'flow',
         props: [],
-        Editor: () => <Button url="/pricing">Explore pricing</Button>,
+        Editor: () => {
+            const t = useT()
+            return <Button url="/pricing">{t('buttons.pricing', 'Explore pricing')}</Button>
+        },
     },
     {
         name: 'ButtonAI',
         kind: 'flow',
         props: [],
-        Editor: () => <Button url="/ai">Learn about PostHog AI</Button>,
+        Editor: () => {
+            const t = useT()
+            return <Button url="/ai">{t('buttons.ai', 'Learn about PostHog AI')}</Button>
+        },
     },
     {
         name: 'ButtonAbout',
         kind: 'flow',
         props: [],
-        Editor: () => <Button url="/about">Read more about us</Button>,
+        Editor: () => {
+            const t = useT()
+            return <Button url="/about">{t('buttons.about', 'Read more about us')}</Button>
+        },
     },
     {
         name: 'ImageDW',
@@ -1413,7 +1447,7 @@ const jsxComponentDescriptors: JsxComponentDescriptor[] = [
                 }
                 delay={0}
             >
-                <p className="text-sm mb-0">You can also connect your own!</p>
+                <p className="text-sm mb-0">{useT()('tooltip.connectYourOwn', 'You can also connect your own!')}</p>
             </Tooltip>
         ),
     },
@@ -1421,17 +1455,26 @@ const jsxComponentDescriptors: JsxComponentDescriptor[] = [
         name: 'SupportSmallTeamLink',
         kind: 'flow',
         props: [],
-        Editor: () => (
-            <SmallTeam slug="support" noMiniCrest>
-                support folks
-            </SmallTeam>
-        ),
+        Editor: () => {
+            const t = useT()
+            return (
+                <SmallTeam slug="support" noMiniCrest>
+                    {t('support.supportFolks', 'support folks')}
+                </SmallTeam>
+            )
+        },
     },
 ]
 
-export default function Home() {
+interface HomeProps {
+    rawBody?: string
+    mdxBody?: string
+    locale?: 'en' | 'ko'
+}
+
+export default function Home({ rawBody: rawBodyProp, mdxBody: mdxBodyProp, locale = 'en' }: HomeProps) {
     const {
-        mdx: { rawBody, mdxBody },
+        mdx: { rawBody: defaultRawBody, mdxBody: defaultMdxBody },
     } = useStaticQuery(graphql`
         query {
             mdx(slug: { eq: "" }) {
@@ -1440,6 +1483,8 @@ export default function Home() {
             }
         }
     `)
+    const rawBody = rawBodyProp || defaultRawBody
+    const mdxBody = mdxBodyProp || defaultMdxBody
     const { appWindow } = useWindow()
     const { setWindowTitle } = useApp()
     const posthog = usePostHog()
@@ -1450,26 +1495,40 @@ export default function Home() {
         }
     }, [])
 
+    const seoTitle =
+        locale === 'ko'
+            ? 'PostHog – 프러덕트 엔지니어를 위한 개발도구'
+            : 'PostHog – We make dev tools for product engineers'
+    const seoDescription =
+        locale === 'ko'
+            ? '모든 개발 도구를 한 곳에서. PostHog는 엔지니어가 성공적인 제품을 더 빠르게 구축, 테스트, 측정 및 출시할 수 있도록 돕습니다. 무료로 시작하세요.'
+            : 'All your developer tools in one place. PostHog gives engineers everything to build, test, measure, and ship successful products faster. Get started free.'
+    const ctaLabel = locale === 'ko' ? '지금 시작하세요 - 무료' : 'Get started - free'
+
     return (
-        <>
-            <SEO
-                title="PostHog – We make dev tools for product engineers"
-                updateWindowTitle={false}
-                description="All your developer tools in one place. PostHog gives engineers everything to build, test, measure, and ship successful products faster. Get started free."
-                image="/images/og/default.png"
-            />
-            <MDXEditor
-                jsxComponentDescriptors={jsxComponentDescriptors}
-                body={rawBody}
-                mdxBody={mdxBody}
-                maxWidth={900}
-                cta={{
-                    url: `https://${
-                        posthog?.isFeatureEnabled?.('direct-to-eu-cloud') ? 'eu' : 'app'
-                    }.posthog.com/signup`,
-                    label: 'Get started - free',
-                }}
-            />
-        </>
+        <LocaleProvider locale={locale}>
+            <>
+                <SEO
+                    title={seoTitle}
+                    updateWindowTitle={false}
+                    description={seoDescription}
+                    image="/images/og/default.png"
+                    noindex={locale !== 'en'}
+                    canonicalUrl={locale !== 'en' ? 'https://posthog.com' : undefined}
+                />
+                <MDXEditor
+                    jsxComponentDescriptors={jsxComponentDescriptors}
+                    body={rawBody}
+                    mdxBody={mdxBody}
+                    maxWidth={900}
+                    cta={{
+                        url: `https://${
+                            posthog?.isFeatureEnabled?.('direct-to-eu-cloud') ? 'eu' : 'app'
+                        }.posthog.com/signup`,
+                        label: ctaLabel,
+                    }}
+                />
+            </>
+        </LocaleProvider>
     )
 }
