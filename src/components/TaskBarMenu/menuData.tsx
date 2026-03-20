@@ -434,7 +434,7 @@ export function useMenuData(): MenuType[] {
             items: mergedDocsMenu(allProducts),
         },
         {
-            trigger: ko ? '커뮤니티' : 'Community',
+            trigger: 'Community',
             items: [
                 {
                     type: 'item',
@@ -503,7 +503,7 @@ export function useMenuData(): MenuType[] {
             ],
         },
         {
-            trigger: ko ? '회사' : 'Company',
+            trigger: 'Company',
             items: [
                 {
                     type: 'item',
@@ -627,7 +627,7 @@ export function useMenuData(): MenuType[] {
         {
             trigger: (
                 <>
-                    <span>{ko ? '더보기' : 'More'}</span>
+                    <span>More</span>
                 </>
             ),
             items: [

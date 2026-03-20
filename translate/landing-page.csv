@@ -41,7 +41,7 @@
 ,Logs-Logs that sync with customer data,로그 -고객 데이터와 동기화 로그,
 ,"CDP-Ingest, transform, and send data between 145+ tools","CDP-145개 이상의 툴 사이에 데이터를 수집, 변환 및 전송합니다. ",
 ,Workflows-Automate workflows with product data,워크플로우-프러덕트 데이터를 활용하여 워크플로우를 자동화하세요. ,
-,Scale,대규모,
+,Scale,,
 ,Managed Warehouse-Query & visualize product and third party data together  , 관리형 창고-프러덕트 데이터와 제 3자 데이터를 함께 조회하고 시각화 합니다.,
 ,"CDP-Ingest, transform, and send data between 145+ tools","CDP-145개 이상의 툴 사이에 데이터를 수집, 변환 및 전송합니다. ",
 ,Custom dashboards-Track all your metircs in one place,맞춤형 대시보드-모든 지표를 한 곳에서 파악하세요. ,
@@ -146,85 +146,79 @@
 ,Act now and get $0 off your first order.,지금 바로 주문하시면 첫 주문 시 0원에 구매하실 수 있습니다,
 ,Thanks for being visitor number,Thanks for being visitor number,
 ,,,
-===미적용 항목 (소스코드에서 발견)===,,,
+===번역 필요 항목 (위치 기반 정리)===,,,
 ,,,
-CTA 컴포넌트 (src/components/Home/CTA.js),,,
-,This is the call to action.,,
-,"3 people (would have) added PostHog to their cart*",,
-,*if this were a real cart,,
-,PostHog Cloud,,기존 row 138에 번역 없음
-,Eco-friendly,,
+상단 메뉴바 (최상단 가로 네비게이션),,,
+,Community,,상단 메뉴바 4번째 항목
+,Company,,상단 메뉴바 5번째 항목
+,More,,상단 메뉴바 6번째 항목 (드롭다운)
 ,,,
-가격표 컴포넌트 (src/components/Home/New/Pricing.tsx),,,
-,Pricing (decreases with volume),,가격표 컬럼 헤더
-,Free tier:,,카드 레이아웃 라벨
-,Pricing:,,카드 레이아웃 라벨
+상단 윈도우 타이틀바 (가운데 상단),,,
+,home.mdx,,윈도우 제목 표시줄 중앙
 ,,,
-제품 카테고리명 (src/components/Home/Control/index.tsx - productCategories),,,
-,Analytics,,
-,Data stack,,
-,Feature development,,
-,Debugging & analysis,,
-,AI tools,,
-,Feedback & testing,,
-,Tools,,
+가운데-제품 탭 영역,,,
+,Scale,,제품 탭 3번째 (스타트업/성장단계/Scale)
+,Explore,,제품 탭 클릭 시 우측 상단 버튼
+,Go to app library,,제품 탭 하단 링크
 ,,,
-추가 제품명 (src/hooks/useProduct.ts - 하드코딩된 제품),,,
-,User interviews,,"제품명: Get feedback from users."
-,Support,,"제품명: Built-in customer support with chat widget and unified inbox."
-,"Coding agent (PostHog Code)",,"제품명: AI coding agent that understands your product analytics."
-,Product tours,,"제품명: Guide users through your product with interactive tours and announcements."
-,Traces,,"제품명: Debug entire AI conversations with full trace visibility."
-,Generations,,"제품명: Inspect every LLM call with full input/output visibility."
-,Evals,,"제품명: Run LLM-as-a-judge evaluations to catch regressions."
-,No-code A/B testing,,"제품명: Run A/B tests without writing code."
-,Group Analytics,,"제품명: Analyze multi-seat accounts and other groups."
-,Platform packages,,"제품명: Features for teams"
-,User profiles,,"제품명: Analyze multi-seat accounts and other groups."
-,Custom dashboards,,"제품명: Track all your most important product and performance metrics in one place."
+가운데-가격표 (Pricing 컴포넌트),,,
+,Pricing (decreases with volume),,가격 비교표 3번째 컬럼 헤더
+,Free tier:,,모바일 카드 레이아웃 라벨
+,Pricing:,,모바일 카드 레이아웃 라벨
 ,,,
-기타 컴포넌트 내부 문자열,,,
-,table of contents,,목차 토글 버튼 (Control/index.tsx)
+하단-CTA 컴포넌트 (뻔뻔스러운 CTA 섹션),,,
+,This is the call to action.,,CTA 대제목 (headline=true일때)
+,Eco-friendly,,CD 이미지 위 초록색 뱃지
+,PostHog Cloud,,CD 이미지 아래 제품명 (기존 row 138에 번역 없음)
+,,,
+가운데-제품 탭 내 제품 설명 (ProductTabs 우측 패널),,,
+,Privacy-focused web analytics,,웹 분석 탭 클릭 시 제목 아래 설명
+,Watch people use your product,,세션 다시보기 탭 클릭 시 설명
+,Product analytics with autocapture,,프러덕트 분석 탭 클릭 시 설명
+,Safely roll out features to specific users or groups,,피쳐 플래그 탭 클릭 시 설명
+,Track errors and resolve issues,,오류 추적 탭 클릭 시 설명
+,Ask anything with no-code surveys,,설문조사 탭 클릭 시 설명
+,Observe and debug AI in production,,LLM분석 탭 클릭 시 설명
+,Ask questions about how people use your product,,PostHog AI 탭 클릭 시 설명
+,Test changes with statistical significance,,실험 탭 클릭 시 설명
+,Search and analyze your logs in PostHog,,로그 탭 클릭 시 설명
+,"Ingest, transform, and send data between 145+ tools",,CDP 탭 클릭 시 설명
+,Automate workflows with your product data,,워크플로우 탭 클릭 시 설명
+,Query & visualize product and third party data together,,관리형 창고 탭 클릭 시 설명 (Scale 탭)
+,,,
+가운데-제품 카테고리명 (Products 실험 뷰에서만 표시),,,
+,Analytics,,제품 그리드 카테고리 헤더
+,Data stack,,제품 그리드 카테고리 헤더
+,Feature development,,제품 그리드 카테고리 헤더
+,Debugging & analysis,,제품 그리드 카테고리 헤더
+,AI tools,,제품 그리드 카테고리 헤더
+,Feedback & testing,,제품 그리드 카테고리 헤더
+,Tools,,제품 그리드 카테고리 헤더
+,,,
+가운데-추가 제품명 (제품 그리드 실험 뷰),,,
+,User interviews,,Get feedback from users.
+,Support,,Built-in customer support with chat widget and unified inbox.
+,"Coding agent (PostHog Code)",,AI coding agent that understands your product analytics.
+,Product tours,,Guide users through your product with interactive tours and announcements.
+,Traces,,Debug entire AI conversations with full trace visibility.
+,Generations,,Inspect every LLM call with full input/output visibility.
+,Evals,,Run LLM-as-a-judge evaluations to catch regressions.
+,No-code A/B testing,,Run A/B tests without writing code.
+,Group Analytics,,Analyze multi-seat accounts and other groups.
+,Platform packages,,Features for teams
+,User profiles,,Analyze multi-seat accounts and other groups.
+,Custom dashboards,,Track all your most important product and performance metrics in one place.
+,Revenue Analytics,,Track revenue alongside product metrics
+,Realtime destinations,,실시간 전송 제품
+,Endpoints,,Custom API endpoints powered by your PostHog data.
+,,,
+기타-툴팁 및 보조 텍스트,,,
+,table of contents,,본문 상단 목차 토글 버튼
 ,Contents,,목차 아코디언 제목
-,You can also connect your own!,,데이터 웨어하우스 툴팁
-,First PostHog customer!,,고객 로고 툴팁
-,Read customer story,,고객 로고 툴팁
-,Total hit count to posthog.com,,방문자 카운터 툴팁
-,Explore,,ProductTabs 버튼 텍스트
+,You can also connect your own!,,데이터 웨어하우스 섹션 툴팁 (i 아이콘)
+,First PostHog customer!,,고객 로고 호버 시 툴팁
+,Read customer story,,고객 로고 호버 시 툴팁
+,Total hit count to posthog.com,,페이지 최하단 방문자 카운터 툴팁
 ,,,
-===제품 데이터 (src/hooks/productData/) - API+하드코딩===,,,
-,,,
-제품명 (name),overview title,,소스파일
-,Web Analytics,,"overview: Privacy-focused web analytics (web_analytics.tsx)"
-,Session Replay,,"overview: Watch people use your product (session_replay.tsx)"
-,Product Analytics,,"overview: Product analytics with autocapture (product_analytics.tsx)"
-,Feature Flags,,"overview: Safely roll out features to specific users or groups (feature_flags.tsx)"
-,Error Tracking,,"overview: Track errors and resolve issues (error_tracking.tsx)"
-,Surveys,,"overview: Ask anything with no-code surveys (surveys.tsx)"
-,LLM Analytics,,"overview: Observe and debug AI in production (llm_analytics.tsx)"
-,PostHog AI,,"overview: Ask questions about how people use your product (posthog_ai.tsx)"
-,Experiments,,"overview: Test changes with statistical significance (experiments.tsx)"
-,Logs,,"overview: Search and analyze your logs in PostHog (logs.tsx)"
-,CDP,,"overview: Ingest transform and send data between 145+ tools (cdp.tsx)"
-,Workflows,,"overview: Automate workflows with your product data (workflows.tsx)"
-,Managed warehouse,,"overview: Query & visualize product and third party data together (data_warehouse.tsx)"
-,Revenue Analytics,,"overview: Track revenue alongside product metrics (revenue_analytics.tsx)"
-,Realtime destinations,,(realtime_destinations.tsx)
-,Endpoints,,"overview: Custom API endpoints powered by your PostHog data (endpoints.tsx)"
-,,,
-제품 overview title (ProductTabs에 표시),,,"번역 시 제품명과 함께 사용됨"
-,Privacy-focused web analytics,,web_analytics.tsx
-,Watch people use your product,,session_replay.tsx
-,Product analytics with autocapture,,product_analytics.tsx - API에서 제공
-,Safely roll out features to specific users or groups,,feature_flags.tsx
-,Track errors and resolve issues,,error_tracking.tsx
-,Ask anything with no-code surveys,,surveys.tsx
-,Observe and debug AI in production,,llm_analytics.tsx
-,Ask questions about how people use your product,,posthog_ai.tsx
-,Test changes with statistical significance,,experiments.tsx
-,Search and analyze your logs in PostHog,,logs.tsx
-,"Ingest, transform, and send data between 145+ tools",,cdp.tsx
-,Automate workflows with your product data,,workflows.tsx
-,Query & visualize product and third party data together,,data_warehouse.tsx
-,Track revenue alongside product metrics,,revenue_analytics.tsx
-,"Custom API endpoints powered by your PostHog data.",,endpoints.tsx
+하단-쿠키 배너 (외부 컴포넌트 - 번역 불가),,,
+,Legally-required cookie banner,,알림 패널 쿠키 안내 (번역 불가능)
