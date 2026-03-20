@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { apps, productLinks } from '.'
+import { getApps, productLinks } from '.'
 import { AppItem, AppLink } from 'components/OSIcons/AppIcon'
 import { motion } from 'framer-motion'
 
@@ -95,7 +95,7 @@ export default function Dock() {
                 className="bg-primary w-full rounded-md border border-primary p-2 grid grid-cols-5 gap-2"
             >
                 <Folder label="Products" items={productLinks} onOpen={setOpenFolder} open={openFolder === 'Products'} />
-                <Folder label="Apps" items={apps} onOpen={setOpenFolder} open={openFolder === 'Apps'} />
+                <Folder label="Apps" items={getApps()} onOpen={setOpenFolder} open={openFolder === 'Apps'} />
             </div>
         </div>
     )

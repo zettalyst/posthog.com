@@ -30,57 +30,60 @@ interface Product {
     color?: string
 }
 
+const isKoPath = () => typeof window !== 'undefined' && window.location.pathname.startsWith('/ko')
+
 export const useProductLinks = () => {
     const { posthogInstance, openNewChat, siteSettings, updateSiteSettings } = useApp()
     const { addToast } = useToast()
     const posthog = usePostHog()
+    const ko = isKoPath()
 
     return [
         {
-            label: 'home.mdx',
+            label: ko ? '홈' : 'home.mdx',
             Icon: <AppIcon name="doc" />,
-            url: '/',
+            url: ko ? '/ko' : '/',
             source: 'desktop',
         },
         {
-            label: 'Product OS',
+            label: ko ? '프러덕트 OS' : 'Product OS',
             Icon: <AppIcon name="folder" />,
             url: '/products',
             source: 'desktop',
         },
         {
-            label: 'Pricing',
+            label: ko ? '가격' : 'Pricing',
             Icon: <AppIcon name="pricing" />,
             url: '/pricing',
             source: 'desktop',
         },
         {
-            label: 'customers.mdx',
+            label: ko ? '고객 목록' : 'customers.mdx',
             Icon: <AppIcon name="spreadsheet" />,
             url: '/customers',
             source: 'desktop',
         },
         {
-            label: 'demo.mov',
+            label: ko ? '데모' : 'demo.mov',
             Icon: IconDemoThumb,
             url: '/demo',
             className: 'size-14 -my-1',
             source: 'desktop',
         },
         {
-            label: 'Docs',
+            label: ko ? '문서' : 'Docs',
             Icon: <AppIcon name="notebook" />,
             url: '/docs',
             source: 'desktop',
         },
         {
-            label: 'Talk to a human',
+            label: ko ? '컨택트' : 'Talk to a human',
             Icon: <AppIcon name="envelope" />,
             url: '/talk-to-a-human',
             source: 'desktop',
         },
         {
-            label: 'Ask a question',
+            label: ko ? '문의' : 'Ask a question',
             Icon: <AppIcon name="forums" />,
             onClick: () => openNewChat({ path: `ask-max` }),
             source: 'desktop',
@@ -97,7 +100,7 @@ export const useProductLinks = () => {
               ]
             : [
                   {
-                      label: 'Sign up ↗',
+                      label: ko ? '회원 가입 ↗' : 'Sign up ↗',
                       Icon: <AppIcon name="compass" />,
                       url: 'https://app.posthog.com/signup',
                       external: true,
@@ -105,7 +108,7 @@ export const useProductLinks = () => {
                   },
               ]),
         {
-            label: 'Switch to website mode',
+            label: ko ? '웹사이트 모드 변경' : 'Switch to website mode',
             Icon: <AppIcon name="switch" />,
             onClick: () => {
                 updateSiteSettings({ ...siteSettings, experience: 'boring' })
@@ -127,50 +130,50 @@ export const useProductLinks = () => {
     ]
 }
 
-export const apps: AppItem[] = [
-    {
-        label: 'Why PostHog?',
-        Icon: <AppIcon name="posthog" />,
-        url: '/about',
-        source: 'desktop',
-    },
-    {
-        label: 'Changelog',
-        Icon: <AppIcon name="invite" />,
-        url: '/changelog',
-        source: 'desktop',
-    },
-    // {
-    //     label: 'Cool tech events',
-    //     Icon: <AppIcon name="invite" />,
-    //     url: '/events',
-    //     source: 'desktop',
-    // },
-    {
-        label: 'Company handbook',
-        Icon: <AppIcon name="handbook" />,
-        url: '/handbook',
-        source: 'desktop',
-    },
-    {
-        label: 'Store',
-        Icon: <AppIcon name="shoppingBag" />,
-        url: '/merch',
-        source: 'desktop',
-    },
-    {
-        label: 'Work here',
-        Icon: <AppIcon name="typewriter" />,
-        url: '/careers',
-        source: 'desktop',
-    },
-    {
-        label: 'Trash',
-        Icon: <AppIcon name="trash" />,
-        url: '/trash',
-        source: 'desktop',
-    },
-]
+export const getApps = (): AppItem[] => {
+    const ko = isKoPath()
+    return [
+        {
+            label: ko ? 'PostHog만의 장점' : 'Why PostHog?',
+            Icon: <AppIcon name="posthog" />,
+            url: '/about',
+            source: 'desktop',
+        },
+        {
+            label: ko ? '변경로그' : 'Changelog',
+            Icon: <AppIcon name="invite" />,
+            url: '/changelog',
+            source: 'desktop',
+        },
+        {
+            label: ko ? '기업 안내서' : 'Company handbook',
+            Icon: <AppIcon name="handbook" />,
+            url: '/handbook',
+            source: 'desktop',
+        },
+        {
+            label: ko ? '스토어' : 'Store',
+            Icon: <AppIcon name="shoppingBag" />,
+            url: '/merch',
+            source: 'desktop',
+        },
+        {
+            label: ko ? '작업 정보' : 'Work here',
+            Icon: <AppIcon name="typewriter" />,
+            url: '/careers',
+            source: 'desktop',
+        },
+        {
+            label: ko ? '휴지통' : 'Trash',
+            Icon: <AppIcon name="trash" />,
+            url: '/trash',
+            source: 'desktop',
+        },
+    ]
+}
+
+// Backward compatibility
+export const apps: AppItem[] = getApps()
 
 interface IconPosition {
     x: number
@@ -188,7 +191,7 @@ const validateIconPositions = (
 ): boolean => {
     const iconWidth = 112
     const iconHeight = 75
-    const allApps = [...productLinks, ...apps]
+    const allApps = [...productLinks, ...getApps()]
 
     for (const app of allApps) {
         if (!positions[app.label]) {
@@ -265,7 +268,7 @@ export default function Desktop() {
 
         // Position productLinks starting from the left
         let currentColumn = 0
-        const leftIcons = columns === 1 ? [...productLinks, ...apps] : productLinks
+        const leftIcons = columns === 1 ? [...productLinks, ...getApps()] : productLinks
         leftIcons.forEach((app, index) => {
             const columnIndex = Math.floor(index / maxIconsPerColumn)
             const positionInColumn = index % maxIconsPerColumn
@@ -288,7 +291,7 @@ export default function Desktop() {
         const minStartFromLeft = (currentColumn + 1) * columnSpacing + paddingHorizontal
         const rightStartColumn = Math.max(rightmostStart, minStartFromLeft)
 
-        apps.forEach((app, index) => {
+        getApps().forEach((app, index) => {
             const columnIndex = Math.floor(index / maxIconsPerColumn)
             const positionInColumn = index % maxIconsPerColumn
 
@@ -381,7 +384,7 @@ export default function Desktop() {
         }, 2000)
     }
 
-    const allApps = [...productLinks, ...apps]
+    const allApps = [...productLinks, ...getApps()]
 
     const handleScreensaverDismiss = () => {
         addToast({

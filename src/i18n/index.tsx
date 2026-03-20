@@ -27,6 +27,8 @@ const translations: Record<string, Record<string, string>> = {
         'products.sideProject': 'n 잡용',
         // Row 32
         'products.growth': '성장 단계 기업',
+        // Row 44 (CSV에 추가됨)
+        'products.scale': '대규모',
         // Row 56
         'products.browseLibrary': '앱 라이브러리',
         // Row 61
