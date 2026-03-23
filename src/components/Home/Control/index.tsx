@@ -732,7 +732,9 @@ const ProductCategoryColumn = ({
 
     return (
         <div className="flex flex-col gap-0.5">
-            <h3 className="text-sm font-normal text-secondary !tracking-normal m-0 mb-1">{category.name}</h3>
+            <h3 className="text-sm font-normal text-secondary !tracking-normal m-0 mb-1">
+                {t(`category.${category.name}`, category.name)}
+            </h3>
             {visibleProducts.map((product: any) => (
                 <ProductCategoryItem key={product.handle} product={product} />
             ))}
@@ -927,6 +929,7 @@ const Image = ({ src, className }: { src: string; className?: string }) => {
 
 const PageNavigation = () => {
     const [showTableOfContents, setShowTableOfContents] = useState(false)
+    const t = useT()
     return (
         <div className="mb-8">
             {!showTableOfContents && (
@@ -934,7 +937,7 @@ const PageNavigation = () => {
                     className="underline text-sm font-semibold"
                     onClick={() => setShowTableOfContents(!showTableOfContents)}
                 >
-                    table of contents
+                    {t('nav.tableOfContents', 'table of contents')}
                 </button>
             )}
             {showTableOfContents && (
@@ -943,7 +946,7 @@ const PageNavigation = () => {
                     items={[
                         {
                             value: 'table-of-contents',
-                            trigger: <strong>Contents</strong>,
+                            trigger: <strong>{t('nav.contents', 'Contents')}</strong>,
                             content: (
                                 <div data-scheme="primary">
                                     <ol className="pl-4">

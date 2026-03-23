@@ -27,7 +27,11 @@ export default function Pricing() {
         { name: '', width: '50px', align: 'center' as const },
         { name: t('pricing.product', 'Product'), width: 'minmax(200px,1fr)', align: 'left' as const },
         { name: t('pricing.freeTier', 'Free tier'), width: 'minmax(200px,1fr)', align: 'left' as const },
-        { name: 'Pricing (decreases with volume)', width: 'minmax(200px,2fr)', align: 'left' as const },
+        {
+            name: t('pricing.pricingHeader', 'Pricing (decreases with volume)'),
+            width: 'minmax(200px,2fr)',
+            align: 'left' as const,
+        },
     ]
 
     const rows = products.map((product, index) => ({
@@ -72,11 +76,11 @@ export default function Pricing() {
                         </div>
                         <div className="px-3 py-2 text-sm space-y-1">
                             <div>
-                                <span className="text-muted">Free tier:</span> {numberToWords(product.freeLimit)}{' '}
-                                {product.unit}s/mo
+                                <span className="text-muted">{t('pricing.freeTierLabel', 'Free tier:')}</span>{' '}
+                                {numberToWords(product.freeLimit)} {product.unit}s/mo
                             </div>
                             <div>
-                                <span className="text-muted">Pricing:</span> $
+                                <span className="text-muted">{t('pricing.pricingLabel', 'Pricing:')}</span> $
                                 {product.startsAt.length <= 3 ? Number(product.startsAt).toFixed(2) : product.startsAt}/
                                 {product.unit}
                             </div>
