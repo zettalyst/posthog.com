@@ -165,6 +165,14 @@ const translations: Record<string, Record<string, string>> = {
 
         // === 기타 (Sheet2 row 50) ===
         'products.youMayAlsoLike': '다음 제품들은 어떠신가요?',
+        'products.more': '더보기',
+
+        // === 서포트 (QA에서 누락 발견) ===
+        'support.supportFolks': '서포트 팀원',
+
+        // === 설치 프롬프트 ===
+        'integration.installWithAI': 'AI로 한 번에 설치하세요',
+        'integration.pasteTerminal': '터미널이나 코드 편집기에 붙여넣기만 하면 AI가 알아서 설치합니다.',
     },
 }
 
