@@ -44,7 +44,7 @@ import { motion } from 'framer-motion'
 import SmallTeam from 'components/SmallTeam'
 import { RenderInClient } from 'components/RenderInClient'
 import WizardCommand from 'components/WizardCommand'
-import { LocaleProvider, useT } from '../../../i18n'
+import { LocaleProvider, useT, useLocalUrl } from '../../../i18n'
 interface ProductButtonsProps {
     productTypes: string[]
     className?: string
@@ -53,6 +53,7 @@ interface ProductButtonsProps {
 
 const ProductButtons: React.FC<ProductButtonsProps> = ({ productTypes, className = '', beta = false }) => {
     const allProducts = useProduct()
+    const localUrl = useLocalUrl()
 
     // Helper to get product by handle
     const getProduct = (handle: string) =>
@@ -69,7 +70,7 @@ const ProductButtons: React.FC<ProductButtonsProps> = ({ productTypes, className
                         iconClassName={`text-${product.color}`}
                         color={product.color}
                         className="font-medium text-primary hover:text-primary"
-                        to={`/${product.slug}`}
+                        to={localUrl(`/${product.slug}`)}
                         state={{ newWindow: true }}
                         asLink
                     >
@@ -597,9 +598,10 @@ const ProductCount = () => {
 }
 
 const AppCount = () => {
+    const localUrl = useLocalUrl()
     return (
         <span className="flex items-center gap-1">
-            <Link to="/products">Browse app library</Link>
+            <Link to={localUrl('/products')}>Browse app library</Link>
             <span>({APP_COUNT})</span>
         </span>
     )
@@ -685,6 +687,7 @@ const ProductCategoryItem = ({
 }: {
     product: { name: string; handle: string; slug?: string; color?: string; Icon?: any; status?: string }
 }) => {
+    const localUrl = useLocalUrl()
     const hasLink = !!product.slug
     const icon = product.Icon ? (
         <product.Icon className={`size-4 shrink-0 ${!hasLink ? 'text-muted' : `text-${product.color || 'gray'}`}`} />
@@ -704,7 +707,7 @@ const ProductCategoryItem = ({
 
     return (
         <Link
-            to={`/${product.slug}`}
+            to={localUrl(`/${product.slug}`)}
             state={{ newWindow: true }}
             className="text-sm text-primary hover:text-primary !font-normal !no-underline hover:!underline"
             data-attr="product-grid-item"
@@ -769,6 +772,7 @@ const ProductCategoryGrid = () => {
 
 const ProductsSectionControl = () => {
     const t = useT()
+    const localUrl = useLocalUrl()
     return (
         <>
             <header className="flex flex-col items-center @xl:flex-row @xl:justify-between @xl:items-baseline [&_h2]:m-0 mt-10 mb-4">
@@ -780,7 +784,7 @@ const ProductsSectionControl = () => {
                 </h2>
                 <aside className="hidden @xl:inline-flex">
                     <span>
-                        <Link to="/products" state={{ newWindow: true }}>
+                        <Link to={localUrl('/products')} state={{ newWindow: true }}>
                             {t('products.browseLibrary', 'Browse app library')}
                         </Link>{' '}
                         ({APP_COUNT})
@@ -794,12 +798,13 @@ const ProductsSectionControl = () => {
 
 const ProductsSectionTest = () => {
     const t = useT()
+    const localUrl = useLocalUrl()
     return (
         <>
             <header className="product-section-test flex flex-col items-center @xl:flex-row @xl:justify-between @xl:items-baseline [&_h2]:m-0 mt-10 mb-4">
                 <h2 className="m-0 tracking-tight">{t('products.products', 'Products')}</h2>
                 <Link
-                    to="/products"
+                    to={localUrl('/products')}
                     state={{ newWindow: true }}
                     className="text-sm font-semibold flex items-center gap-0.5"
                 >
@@ -916,8 +921,9 @@ const CompanyStageTabs = () => {
 }
 
 const Button = ({ url, children }: { url: string; children: React.ReactNode }) => {
+    const localUrl = useLocalUrl()
     return (
-        <OSButton asLink to={url} variant="secondary" size="md" state={{ newWindow: true }}>
+        <OSButton asLink to={localUrl(url)} variant="secondary" size="md" state={{ newWindow: true }}>
             {children}
         </OSButton>
     )
@@ -979,6 +985,7 @@ const Customers = () => {
     const logoRefs = React.useRef<Record<string, HTMLElement>>({})
     const { websiteMode } = useApp()
     const t = useT()
+    const localUrl = useLocalUrl()
 
     // Get all companies
     const allCompanies = [...COL1, ...COL2]
@@ -1100,7 +1107,9 @@ const Customers = () => {
             {hasCaseStudy(customer.slug) || customer.slug === 'posthog' ? (
                 <OSButton
                     asLink
-                    to={customer.slug === 'posthog' ? '/blog/posthog-marketing' : `/customers/${customer.slug}`}
+                    to={localUrl(
+                        customer.slug === 'posthog' ? '/blog/posthog-marketing' : `/customers/${customer.slug}`
+                    )}
                     state={{ newWindow: true }}
                     className="relative border border-transparent hover:border-primary rounded-sm"
                 >
@@ -1234,7 +1243,7 @@ const Customers = () => {
                 <OSTable columns={columns} rows={rows} size="sm" rowAlignment="top" />
                 <OSButton
                     asLink
-                    to="/customers"
+                    to={localUrl('/customers')}
                     variant="secondary"
                     size="md"
                     className="mt-4"

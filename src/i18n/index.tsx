@@ -175,3 +175,11 @@ export const useT = () => {
         return translations[locale]?.[key] || fallback
     }
 }
+
+export const useLocalUrl = () => {
+    const locale = useLocale()
+    return (path: string) => {
+        if (locale === 'en' || path.startsWith('http')) return path
+        return `https://posthog.com${path}`
+    }
+}
