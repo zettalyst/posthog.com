@@ -3,7 +3,7 @@ import useProducts from 'hooks/useProducts'
 import useProduct from 'hooks/useProduct'
 import OSTable from 'components/OSTable'
 import { IconArrowUpRight } from '@posthog/icons'
-import { Link } from 'gatsby'
+import Link from 'components/Link'
 import OSButton from 'components/OSButton'
 import { useT } from '../../../i18n'
 

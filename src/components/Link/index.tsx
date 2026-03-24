@@ -115,7 +115,15 @@ export default function Link({
     const posthog = usePostHog()
     const locationHref = appWindow?.element?.props?.location?.href
     const initialUrl = to || href
-    const url = resolveRelativeLink(initialUrl, locationHref)
+
+    // For /ko/ locale pages, redirect internal links to posthog.com
+    const isKoPage =
+        typeof window !== 'undefined' ? window.location.pathname.startsWith('/ko') : locationHref?.includes('/ko')
+    const resolvedUrl = resolveRelativeLink(initialUrl, locationHref)
+    const url =
+        isKoPage && resolvedUrl && /^\/(?!\/)/.test(resolvedUrl) && !resolvedUrl.startsWith('/ko')
+            ? `https://posthog.com${resolvedUrl}`
+            : resolvedUrl
     const internal = !disablePrefetch && url && /^\/(?!\/)/.test(url)
     const isPostHogAppUrl = url && /(eu|us|app)\.posthog\.com/.test(url)
     const preview =
