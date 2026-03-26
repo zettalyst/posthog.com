@@ -15,7 +15,7 @@ export const useLocale = () => useContext(LocaleContext)
 const translations: Record<string, Record<string, string>> = {
     ko: {
         // === 메인 태그라인 (Sheet2 row 18) ===
-        tagline: '저희는 프러덕트 엔지니어가 완벽한 제품을 만들수 있도록 돕는 개발도구를 제작합니다.',
+        tagline: '저희는 프로덕트 엔지니어가 성공적인 제품을 만들수 있도록 돕는 개발도구를 제작합니다.',
 
         // === CTA 버튼 (Sheet2 rows 19-20) ===
         'cta.getStarted': '지금 시작하세요-무료',
@@ -33,9 +33,11 @@ const translations: Record<string, Record<string, string>> = {
 
         // === 고객 섹션 (Sheet2 rows 59-62) ===
         'customers.shuffle': '회사를 재배치 해보세요.',
-        'customers.openCustomers': '고객 파일을 열어보세요.',
+        'customers.openCustomers': 'customer.mdx를 열어보세요',
         'customers.vcsLoveThem': '벤쳐 캐피탈',
-        'customers.productEngineersLoveThem': '프러덕트 엔지니어들',
+        'customers.productEngineersLoveThem': '프로덕트 엔지니어들',
+        'customers.col.VCs love them': '벤쳐 캐피탈',
+        'customers.col.Product engineers love them': '프로덕트 엔지니어들',
 
         // === 버튼 (Sheet2 rows 81, 103, 111, 118) ===
         'buttons.dataStack': 'PostHog의 데이터 스택 읽어보기',
@@ -56,7 +58,7 @@ const translations: Record<string, Record<string, string>> = {
         // === 제품명 (Sheet2 rows 25-49, 196-212) ===
         'product.Web Analytics': '웹 분석',
         'product.Session Replay': '세션 리플레이',
-        'product.Product Analytics': '프러덕트 분석',
+        'product.Product Analytics': '프로덕트 분석',
         'product.Feature Flags': '피처 플래그',
         'product.Error Tracking': '오류 추적',
         'product.Surveys': '설문조사',
@@ -71,7 +73,7 @@ const translations: Record<string, Record<string, string>> = {
         'product.User interviews': '사용자 인터뷰',
         'product.Support': '지원',
         'product.Coding agent (PostHog Code)': '코딩 에이전트',
-        'product.Product tours': '프러덕트 안내',
+        'product.Product tours': '프로덕트 안내',
         'product.Traces': '추적',
         'product.Generations': '생성',
         'product.Evals': '평가',
@@ -93,17 +95,17 @@ const translations: Record<string, Record<string, string>> = {
         'overview.Ask anything with no-code surveys': '코딩없이 설문조사를 통해 무엇이든 물어보세요',
         'overview.Observe and debug AI in production': '실제 운영 환경에서 AI를 관찰하고 디버깅하세요',
         'overview.Ask questions about how people use your product':
-            '실제 사람들이 프러덕트를 어떻게 사용하는지에 대해 질문해보세요.',
+            '실제 사람들이 프로덕트를 어떻게 사용하는지에 대해 질문해보세요.',
         'overview.Test changes with statistical significance': '통계상 유의미한 변화를 테스트하세요.',
         'overview.Logs that sync with customer data': '고객 데이터와 동기화 로그',
         'overview.Search and analyze your logs in PostHog': 'PostHog에서 당신의 데이터 로그를 검색하고 분석해보세요.',
         'overview.Ingest, transform, and send data between 145+ tools':
             '145개 이상의 툴 사이에 데이터를 수집, 변환 및 전송합니다.',
-        'overview.Automate workflows with product data': '프러덕트 데이터를 활용하여 워크플로우를 자동화하세요.',
+        'overview.Automate workflows with product data': '프로덕트 데이터를 활용하여 워크플로우를 자동화하세요.',
         'overview.Query & visualize product and third party data together':
-            '프러덕트 데이터와 제 3자 데이터를 함께 조회하고 시각화 합니다.',
+            '프로덕트 데이터와 제 3자 데이터를 함께 조회하고 시각화 합니다.',
         'overview.Track all your most important product and performance metrics in one place':
-            '당신의 중요 프러덕트와 성능 지표를 한 곳에서 추적해 보세요.',
+            '당신의 중요 프로덕트와 성능 지표를 한 곳에서 추적해 보세요.',
         'overview.Get feedback from users.': '사용자들로부터 후기를 들어보세요.',
         'overview.Built-in customer support with chat widget and unified inbox.':
             '채팅 위젯과 통합 받은편지함을 갖춘 내장형 고객 지원 기능',
@@ -121,7 +123,7 @@ const translations: Record<string, Record<string, string>> = {
         'overview.Analyze multi-seat accounts and other groups.':
             '여러 사용자가 포함된 계정과 다양한 그룹을 분석해 보세요.',
         'overview.Features for teams': '팀 맞춤 기능',
-        'overview.Track revenue alongside product metrics': '프러덕트 지표와 함께 수익을 추적해 보세요',
+        'overview.Track revenue alongside product metrics': '프로덕트 지표와 함께 수익을 추적해 보세요',
         'overview.Custom API endpoints powered by your PostHog data.':
             'PostHog 데이터를 기반으로 한 커스텀 API 엔드포인트',
 
@@ -137,7 +139,7 @@ const translations: Record<string, Record<string, string>> = {
         // === CTA 컴포넌트 (Sheet2 rows 168-170, 132-145) ===
         'cta.addedToCart': '보인다 보여! 지금 벌써 3분이나 저희 제품을 카트에 실었네요😏😏',
         'cta.ifRealCart': '물론 저희는 친환경을 지향해서 CD도 카트도 필요 없지만',
-        'cta.notEndorsed': '킴 카다시안은 절대 이용하지 않을 최고의 지적 서비스',
+        'cta.notEndorsed': '이효리는 절대 이용하지 않을 최고의 지적 서비스',
         'cta.ecoFriendly': '환경 친화적-CD 필요없음!',
         'cta.postHogCloud': 'PostHog 클라우드',
         'cta.digitalDownload': '디지털 다운로드',
@@ -166,6 +168,16 @@ const translations: Record<string, Record<string, string>> = {
         // === 기타 (Sheet2 row 50) ===
         'products.youMayAlsoLike': '다음 제품들은 어떠신가요?',
         'products.more': '더보기',
+        'products.dpaGenerator': 'DPA 생성기',
+        'products.baaGenerator': 'BAA 생성기',
+        'products.platformPackages': '플랫폼 패키지',
+        'products.goToAppLibrary': '앱 라이브러리',
+
+        // === CTA "today" (Sheet2 row 141) ===
+        'cta.today': '오늘',
+
+        // === 윈도우 타이틀 (Sheet2 row 156) ===
+        'windowTitle.home': '홈',
 
         // === 서포트 (QA에서 누락 발견) ===
         'support.supportFolks': '서포트 팀원',

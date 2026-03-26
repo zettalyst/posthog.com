@@ -335,7 +335,7 @@ export function useMenuData(): MenuType[] {
     const ko = isKoPath()
     const mainNavItems: MenuType[] = [
         {
-            trigger: ko ? '프러덕트 OS' : 'Product OS',
+            trigger: ko ? '프로덕트 OS' : 'Product OS',
             items: buildProductOSMenuItems(allProducts),
             mobileLink: '/products', // Direct link on mobile
         },
@@ -434,7 +434,7 @@ export function useMenuData(): MenuType[] {
             items: mergedDocsMenu(allProducts),
         },
         {
-            trigger: 'Community',
+            trigger: ko ? '커뮤니티' : 'Community',
             items: [
                 {
                     type: 'item',
@@ -503,7 +503,7 @@ export function useMenuData(): MenuType[] {
             ],
         },
         {
-            trigger: 'Company',
+            trigger: ko ? 'PostHog란?' : 'Company',
             items: [
                 {
                     type: 'item',
@@ -627,7 +627,7 @@ export function useMenuData(): MenuType[] {
         {
             trigger: (
                 <>
-                    <span>More</span>
+                    <span>{ko ? '더보기' : 'More'}</span>
                 </>
             ),
             items: [

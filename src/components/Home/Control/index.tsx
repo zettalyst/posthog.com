@@ -1091,8 +1091,16 @@ const Customers = () => {
 
     const currentLabels = companyBreakdowns[currentBreakdown as keyof typeof companyBreakdowns]
     const columns = [
-        { name: currentLabels.col1, width: 'minmax(auto,1fr)', align: 'center' as const },
-        { name: currentLabels.col2, width: 'minmax(auto,1fr)', align: 'center' as const },
+        {
+            name: t(`customers.col.${currentLabels.col1}`, currentLabels.col1),
+            width: 'minmax(auto,1fr)',
+            align: 'center' as const,
+        },
+        {
+            name: t(`customers.col.${currentLabels.col2}`, currentLabels.col2),
+            width: 'minmax(auto,1fr)',
+            align: 'center' as const,
+        },
     ]
 
     // Helper function to render customer with case study link
@@ -1503,13 +1511,13 @@ export default function Home({ rawBody: rawBodyProp, mdxBody: mdxBodyProp, local
 
     useEffect(() => {
         if (appWindow) {
-            setWindowTitle(appWindow, 'home.mdx')
+            setWindowTitle(appWindow, locale === 'ko' ? '홈' : 'home.mdx')
         }
     }, [])
 
     const seoTitle =
         locale === 'ko'
-            ? 'PostHog – 프러덕트 엔지니어를 위한 개발도구'
+            ? 'PostHog – 프로덕트 엔지니어를 위한 개발도구'
             : 'PostHog – We make dev tools for product engineers'
     const seoDescription =
         locale === 'ko'

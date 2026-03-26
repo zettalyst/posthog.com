@@ -219,7 +219,7 @@ export default function CTA({ headline = true }) {
                                     }
                                     className="font-bold dark:text-yellow text-red"
                                 >
-                                    today
+                                    {t('cta.today', 'today')}
                                 </button>
                                 . <br className="hidden sm:block" />
                                 {t('cta.actNow', 'Act now and get $0 off your first order.')}

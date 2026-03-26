@@ -234,21 +234,21 @@ export default function ProductTabs({ productHandles, className, selectedStage }
                 >
                     {selectedStage === 'scale' && (
                         <div className="bg-accent border border-primary rounded p-2 text-xs basis-full">
-                            <span>You may also like...</span>
+                            <span>{t('products.youMayAlsoLike', 'You may also like...')}</span>
                             <ul className="my-0">
                                 <li>
                                     <Link to="/dpa" state={{ newWindow: true }}>
-                                        DPA generator
+                                        {t('products.dpaGenerator', 'DPA generator')}
                                     </Link>
                                 </li>
                                 <li>
                                     <Link to="/baa" state={{ newWindow: true }}>
-                                        BAA generator
+                                        {t('products.baaGenerator', 'BAA generator')}
                                     </Link>
                                 </li>
                                 <li>
                                     <Link to="/platform-packages" state={{ newWindow: true }}>
-                                        Platform packages
+                                        {t('products.platformPackages', 'Platform packages')}
                                     </Link>
                                 </li>
                             </ul>
@@ -262,7 +262,7 @@ export default function ProductTabs({ productHandles, className, selectedStage }
                         size="md"
                         width="full"
                     >
-                        Go to app library ({APP_COUNT})
+                        {t('products.goToAppLibrary', 'Go to app library')} ({APP_COUNT})
                     </OSButton>
                 </div>
             }

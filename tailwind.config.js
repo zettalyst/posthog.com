@@ -229,6 +229,7 @@ module.exports = {
                 sans: [
                     'IBM Plex Sans Variable',
                     'IBM Plex Sans',
+                    'IBM Plex Sans KR',
                     '-apple-system',
                     'BlinkMacSystemFont',
                     'avenir next',

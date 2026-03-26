@@ -46,7 +46,7 @@ export const useProductLinks = () => {
             source: 'desktop',
         },
         {
-            label: ko ? '프러덕트 OS' : 'Product OS',
+            label: ko ? '프로덕트 OS' : 'Product OS',
             Icon: <AppIcon name="folder" />,
             url: '/products',
             source: 'desktop',
@@ -58,13 +58,13 @@ export const useProductLinks = () => {
             source: 'desktop',
         },
         {
-            label: ko ? '고객 목록' : 'customers.mdx',
+            label: ko ? 'Customer.mdx' : 'customers.mdx',
             Icon: <AppIcon name="spreadsheet" />,
             url: '/customers',
             source: 'desktop',
         },
         {
-            label: ko ? '데모' : 'demo.mov',
+            label: ko ? '데모.mov' : 'demo.mov',
             Icon: IconDemoThumb,
             url: '/demo',
             className: 'size-14 -my-1',
@@ -77,13 +77,13 @@ export const useProductLinks = () => {
             source: 'desktop',
         },
         {
-            label: ko ? '컨택트' : 'Talk to a human',
+            label: ko ? '이메일 문의' : 'Talk to a human',
             Icon: <AppIcon name="envelope" />,
             url: '/talk-to-a-human',
             source: 'desktop',
         },
         {
-            label: ko ? '문의' : 'Ask a question',
+            label: ko ? '채팅 상담' : 'Ask a question',
             Icon: <AppIcon name="forums" />,
             onClick: () => openNewChat({ path: `ask-max` }),
             source: 'desktop',
@@ -140,7 +140,7 @@ export const getApps = (): AppItem[] => {
             source: 'desktop',
         },
         {
-            label: ko ? '변경로그' : 'Changelog',
+            label: ko ? 'Changelog' : 'Changelog',
             Icon: <AppIcon name="invite" />,
             url: '/changelog',
             source: 'desktop',
@@ -158,7 +158,7 @@ export const getApps = (): AppItem[] => {
             source: 'desktop',
         },
         {
-            label: ko ? '작업 정보' : 'Work here',
+            label: ko ? '커리어' : 'Work here',
             Icon: <AppIcon name="typewriter" />,
             url: '/careers',
             source: 'desktop',
