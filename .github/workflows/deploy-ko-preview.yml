@@ -25,9 +25,16 @@ jobs:
               env:
                   NODE_OPTIONS: '--max_old_space_size=16384'
 
+            - name: Strip docs and source maps to fit CF Pages 20k file limit
+              run: |
+                  rm -rf public/docs public/page-data/docs
+                  find public -name '*.map' -delete
+                  find public -name '*.LICENSE.txt' -delete
+                  echo "File count: $(find public -type f | wc -l)"
+
             - name: Deploy to Cloudflare Pages
               uses: cloudflare/wrangler-action@v3
               with:
                   apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
                   accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-                  command: pages deploy public --project-name=posthog-ko-preview --branch=main
+                  command: pages deploy public --project-name=posthog-ko-preview --branch=main --commit-dirty=true
